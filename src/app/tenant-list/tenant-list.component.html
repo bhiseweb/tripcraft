@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<div class="container" *ngIf="tenantData">
+  <h2>Tenants</h2>         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Sub Domain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tenant of tenantData">
+        <td>{{tenant.name}}</td>
+        <td><a [routerLink]="['/tenant-description', tenant.id]">{{tenant.subdomain}}</a> (click on sub domain to select a tenant)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

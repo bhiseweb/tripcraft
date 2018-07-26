@@ -1,0 +1,118 @@
+<div class="container">
+	<h2>Add Property</h2>
+	<div class="row">
+		<form [formGroup]="propertyForm">
+			<div class="col-md-6">
+				<div class="form-group">
+				  <label for="hotel_name">Hotel Name:</label>
+				  <input formControlName="hotel_name" type="text" class="form-control-sm" id="hotel_name" placeholder="Enter hotel name" name="hotel_name">
+				</div>
+
+				<div class="form-group">
+				  <label for="description">Description:</label>
+				  <input formControlName="description" type="text" class="form-control-sm" id="description" placeholder="Enter description" name="description">
+				</div>
+
+				<div class="form-group">
+				  <label for="number_of_rooms">Rooms:</label>
+				  <input formControlName="number_of_rooms" type="text" class="form-control-sm" id="number_of_rooms" placeholder="Enter number of rooms" name="number_of_rooms">
+				</div>
+
+				<div class="form-group">
+				  <label for="main_phone">Phone:</label>
+				  <input formControlName="main_phone" type="text" class="form-control-sm" id="main_phone" placeholder="Enter phone number" name="main_phone">
+				</div>
+
+				<div class="form-group">
+				  <label for="text_number">Text number:</label>
+				  <input formControlName="text_number" type="text" class="form-control-sm" id="text_number" placeholder="Enter text number" name="text_number">
+				</div>
+
+				<div class="form-group">
+				  <label for="address_1">Address line 1:</label>
+				  <input formControlName="address_1" type="text" class="form-control-sm" id="address_1" placeholder="Enter Address line 1" name="address_1">
+				</div>
+
+				<div class="form-group">
+				  <label for="address_2">Address line 2:</label>
+				  <input formControlName="address_2" type="text" class="form-control-sm" id="address_2" placeholder="Enter Address line 2" name="address_2">
+				</div>
+
+				<div class="form-group">
+				  <label for="city">City:</label>
+				  <input formControlName="city" type="text" class="form-control-sm" id="city" placeholder="Enter city" name="city">
+				</div>
+
+				<div class="form-group">
+				  <label for="state_region">State:</label>
+				  <input formControlName="state_region" type="text" class="form-control-sm" id="state_region" placeholder="Enter state" name="state_region">
+				</div>
+
+				<div class="form-group">
+				  <label for="country">Country:</label>
+				  <input formControlName="country" type="text" class="form-control-sm" id="country" placeholder="Enter country" name="country">
+				</div>
+
+			</div>
+
+			<div class="col-md-6">
+
+				<div class="form-group">
+				  <label for="postal_code">Postal code:</label>
+				  <input formControlName="postal_code" type="text" class="form-control-sm" id="postal_code" placeholder="Enter postal code" name="postal_code">
+				</div>
+
+				<div class="form-group">
+				  <label for="metro_area">Metro area:</label>
+				  <input formControlName="metro_area" type="text" class="form-control-sm" id="metro_area" placeholder="Enter metro_area" name="metro area">
+				</div>
+
+				<div class="form-group">
+				  <label for="latitude">Latitude:</label>
+				  <input formControlName="latitude" type="text" class="form-control-sm" id="latitude" placeholder="Enter latitude" name="latitude">
+				</div>
+
+				<div class="form-group">
+				  <label for="longitude">Longitude:</label>
+				  <input formControlName="longitude" type="text" class="form-control-sm" id="longitude" placeholder="Enter longitude" name="longitude">
+				</div>
+
+				<div class="form-group">
+				  <label for="website">Website:</label>
+				  <input formControlName="website" type="text" class="form-control-sm" id="website" placeholder="Enter website" name="website">
+				</div>
+
+				<div class="form-group">
+				  <label for="general">General:</label>
+				  <input formControlName="general" type="text" class="form-control-sm" id="general" placeholder="Enter general" name="general">
+				</div>
+
+				<div class="form-group">
+				  <label for="reservations_email">Reservations email:</label>
+				  <input formControlName="reservations_email" type="email" class="form-control-sm" id="reservations_email" placeholder="Enter reservations email" name="reservations_email">
+				</div>
+
+				<div class="form-group">
+				  <label for="front_desk_email">Front desk email:</label>
+				  <input formControlName="front_desk_email" type="email" class="form-control-sm" id="front_desk_email" placeholder="Enter front_desk_email" name="front desk email">
+				</div>
+
+				<div class="form-group">
+				  <label for="timezone">Timezone:</label>
+				  <input formControlName="timezone" type="text" class="form-control-sm" id="timezone" placeholder="Enter timezone" name="timezone">
+				</div>
+
+				<div class="form-group">
+				  <label for="check_in_time">Check In:</label>
+				  <input formControlName="check_in_time" type="text" class="form-control-sm" id="check_in_time" placeholder="Enter check in" name="check_in_time">
+				</div>
+
+				<div class="form-group">
+				  <label for="check_out_time">Check out:</label>
+				  <input formControlName="check_out_time" type="text" class="form-control-sm" id="check_out_time" placeholder="Enter check out" name="check_out_time">
+				</div>
+				<button type="submit" class="btn btn-default" (click)="saveProperty()">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>

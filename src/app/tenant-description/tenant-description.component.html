@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<div class="container" *ngIf="tenantServices">
+  <h2>Tenant Description</h2>         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of tenantServices">
+        <td>{{service.name}}</td>
+        <td><a [routerLink]="['/properties-list', service.url]">{{service.url}}</a> (click on URL to see respective properties)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
