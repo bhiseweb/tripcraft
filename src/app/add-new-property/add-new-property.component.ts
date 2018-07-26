@@ -35,8 +35,8 @@ export class AddNewPropertyComponent implements OnInit {
 
 	    this.http.post('https://propertyservicedevelopment.tripcraft.com/properties/', this.propertyForm.value, {headers:headers})
 	    .subscribe(res =>{  
-	      console.log("property added Successfully");
-	    },
+	      alert("property added Successfully");
+      },
 	    error=>{  
 	      console.log("there was some error")});
 	}

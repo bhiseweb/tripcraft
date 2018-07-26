@@ -46,7 +46,7 @@ export class EditPropertyComponent implements OnInit {
 
 	    this.http.patch('https://propertyservicedevelopment.tripcraft.com/properties/'+this.id, this.propertyForm.value, {headers:headers})
 	    .subscribe(res =>{  
-	      console.log("property updated Successfully");
+	      alert("property updated Successfully");
 	    },
 	    error=>{  
 	      console.log("there was some error")});
