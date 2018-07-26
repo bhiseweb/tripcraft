@@ -14,11 +14,19 @@ export class TenantListComponent implements OnInit {
   constructor(private svc: PropertiesService) { }
 
   ngOnInit() {
-  	this.svc.getTenants().subscribe(data => {
-      if(data.hasOwnProperty('items')){
-        this.tenantData = data['items'];
-      }
-    });
+
+   this.svc.getTenants()
+    .subscribe(
+      data=>{
+        if(data.hasOwnProperty('items')){
+          this.tenantData= data['items'];
+        } 
+        console.log(this.tenantData)},
+        error=>{
+          console.log("Oooops Something Went Wrong.....")
+        }
+    )
+
   }
 }
 

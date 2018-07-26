@@ -4,25 +4,24 @@
 </head>
 <body>
 
-<a [routerLink]="['/add-new-property']">Add new property</a>
+<a class="btn btn-primary pull-right" [routerLink]="['/add-new-property']">Add new property</a>
 
-<!-- <div class="container" *ngIf="propertiesData">
-  <h2>Tenant Table</h2>         
+<div class="container" *ngIf="propertiesData">
+  <h2>Properties</h2>         
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Sub Domain</th>
+        <th>Hotel Name</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let property of propertiesData">
-        <td>{{property.name}}</td>
-        <td>{{property.subdomain}}</td>
+        <td>{{property.hotel_name}}</td>
+        <td><a [routerLink]="['/edit-property', property.id]">Edit</a></td>
       </tr>
     </tbody>
   </table>
-</div -->>
+</div>
 
 </body>
 </html>

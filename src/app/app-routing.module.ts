@@ -4,11 +4,13 @@ import { TenantDescriptionComponent } from './tenant-description/tenant-descript
 import { TenantListComponent } from './tenant-list/tenant-list.component';
 import { PropertiesListComponent } from './properties-list/properties-list.component';
 import { AddNewPropertyComponent } from './add-new-property/add-new-property.component';
+import { EditPropertyComponent } from './edit-property/edit-property.component';
 const routes: Routes = [
 	{path: '', component: TenantListComponent},
 	{path: 'tenant-description/:id', component: TenantDescriptionComponent},
 	{path: 'properties-list/:url', component: PropertiesListComponent},
 	{path: 'add-new-property', component: AddNewPropertyComponent},
+	{path: 'edit-property/:id', component: EditPropertyComponent},
 ];
 
 @NgModule({

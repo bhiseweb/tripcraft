@@ -1,3 +1,15 @@
-<p>
-  edit-property works!
-</p>
+<div class="container">
+	<h2>Edit Property</h2>
+	<div class="row">
+		<form [formGroup]="propertyForm">
+			<div class="col-md-6">
+				<div class="form-group">
+				  <label for="hotel_name">Hotel Name:</label>
+				  <input formControlName="hotel_name" type="text" class="form-control-sm" id="hotel_name" placeholder="Enter hotel name" name="hotel_name" [(ngModel)]="propertyData.hotel_name">
+				</div>
+
+				<button type="submit" class="btn btn-default" (click)="updateProperty()">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>

@@ -30,19 +30,23 @@ export class PropertiesService {
 
 
 
-	    if (localStorage.getItem('Jwt') != null){
+	    return this.http.get('https://tenantservicedevelopment.tripcraft.com/api/tenants/',{
+	      observe:'body',
+	      headers:new HttpHeaders({'Content-Type':'application/json', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'), 'Tenant': '4', 'Username': 'test@tripcraft.com'})
+	    });
 
-		    return this.http.get('https://tenantservicedevelopment.tripcraft.com/api/tenants/',{
-		      observe:'body',
-		      headers:new HttpHeaders({'Content-Type':'application/json', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'), 'Tenant': '4', 'Username': 'test@tripcraft.com'})
-		    });
-
-		}
 	}
 
 
 	getProperties(url:any){
-	    return this.http.get(url,{
+	    return this.http.get(url+'/properties',{
+	      observe:'body',
+	      headers:new HttpHeaders({'Content-Type':'application/json', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'), 'Tenant': '4', 'Username': 'test@tripcraft.com'})
+	    });
+	}
+
+	getProperty(id:any){
+	    return this.http.get('https://propertyservicedevelopment.tripcraft.com/properties'+id,{
 	      observe:'body',
 	      headers:new HttpHeaders({'Content-Type':'application/json', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'), 'Tenant': '4', 'Username': 'test@tripcraft.com'})
 	    });
@@ -56,9 +60,16 @@ export class PropertiesService {
 	}
 
 	saveProperties(formData:any){
-		return this.http.post('https://propertyservicedevelopment.tripcraft.com/properties', {
+		return this.http.post('https://propertyservicedevelopment.tripcraft.com/properties/', {
 	      body: formData,
-	      headers:new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'),'Tenant': '4', 'Username': 'test@tripcraft.com'})
+	      headers:new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'),'Postman-Token':	'dd84d314-e4b0-40e0-818f-46c288eab2c6', 'Tenant': '4', 'Username': 'test@tripcraft.com'})
+	    });
+	}
+
+	updateProperty(formData:any, id:any){
+		return this.http.put('https://propertyservicedevelopment.tripcraft.com/properties/'+id, {
+	      body: formData,
+	      headers:new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'),'Postman-Token':	'dd84d314-e4b0-40e0-818f-46c288eab2c6', 'Tenant': '4', 'Username': 'test@tripcraft.com'})
 	    });
 	}
 

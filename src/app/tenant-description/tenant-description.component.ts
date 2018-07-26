@@ -16,9 +16,8 @@ export class TenantDescriptionComponent implements OnInit {
     
   	this.id = this.route.snapshot.params['id'];
 
-  	this.svc.getTenant(this.id).subscribe(data => {
+  	this.svc.getTenant(this.id).subscribe((data) => {
       if(data.hasOwnProperty('services')){
-        console.log('data', data);
   		  this.tenantServices = data['services'];
       }
     });

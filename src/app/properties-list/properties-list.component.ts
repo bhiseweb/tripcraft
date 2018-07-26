@@ -19,9 +19,9 @@ export class PropertiesListComponent implements OnInit {
 
   ngOnInit() {
   	this.svc.getProperties(this.url).subscribe(data => {
-      // if(data.hasOwnProperty('items')){
-      //   this.propertiesData = data['items'];
-      // }
+      if(data.hasOwnProperty('items')){
+        this.propertiesData = data['items'];
+      }
     });
   }
 
