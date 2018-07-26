@@ -60,16 +60,32 @@ export class PropertiesService {
 	}
 
 	saveProperties(formData:any){
-		return this.http.post('https://propertyservicedevelopment.tripcraft.com/properties/', {
-	      body: formData,
-	      headers:new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'),'Postman-Token':	'dd84d314-e4b0-40e0-818f-46c288eab2c6', 'Tenant': '4', 'Username': 'test@tripcraft.com'})
-	    });
+
+		const headers = new HttpHeaders()
+	        .set('cache-control', 'no-cache')
+	        .set('content-type', 'application/json')
+	        .set('Jwt', localStorage.getItem('Jwt'))
+	        .set('Tenant', '4')
+	        .set('Username', 'test@tripcraft.com')
+	        .set('postman-token', 'b408a67d-5f78-54fc-2fb7-00f6e9cefbd1');
+
+  		this.http.post('https://propertyservicedevelopment.tripcraft.com/properties/', formData, { headers: headers }).subscribe(res => console.log(res));
 	}
 
 	updateProperty(formData:any, id:any){
-		return this.http.put('https://propertyservicedevelopment.tripcraft.com/properties/'+id, {
-	      body: formData,
-	      headers:new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded', 'Cache-Control': 'no-cache', 'Jwt': localStorage.getItem('Jwt'),'Postman-Token':	'dd84d314-e4b0-40e0-818f-46c288eab2c6', 'Tenant': '4', 'Username': 'test@tripcraft.com'})
+
+		const headers = new HttpHeaders()
+	        .set('cache-control', 'no-cache')
+	        .set('content-type', 'application/json')
+	        .set('Jwt', localStorage.getItem('Jwt'))
+	        .set('Tenant', '4')
+	        .set('Username', 'test@tripcraft.com')
+	        .set('postman-token', 'b408a67d-5f78-54fc-2fb7-00f6e9cefbd1');
+
+	    this.http
+	        .patch('https://propertyservicedevelopment.tripcraft.com/properties/'+id, formData, { headers: headers })
+	        .subscribe(res => {
+	        	return res;
 	    });
 	}
 
