@@ -8,7 +8,7 @@ import { EditPropertyComponent } from './edit-property/edit-property.component';
 const routes: Routes = [
 	{path: '', component: TenantListComponent},
 	{path: 'tenant-description/:id', component: TenantDescriptionComponent},
-	{path: 'properties-list/:url', component: PropertiesListComponent},
+	{path: 'properties-list', component: PropertiesListComponent},
 	{path: 'add-new-property', component: AddNewPropertyComponent},
 	{path: 'edit-property/:id', component: EditPropertyComponent},
 ];
